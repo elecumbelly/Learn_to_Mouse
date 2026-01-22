@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn to Mouse!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Menu Screen -->
+    <div id="main-menu" class="screen active">
+        <h1 class="title">🖱️ Learn to Mouse! 🎮</h1>
+        <div class="game-buttons">
+            <button class="game-btn" data-game="bubble">
+                <div class="icon">🫧</div>
+                <div class="label">Pop Bubbles</div>
+            </button>
+            <button class="game-btn" data-game="feeding">
+                <div class="icon">🐰</div>
+                <div class="label">Feed Animals</div>
+            </button>
+            <button class="game-btn" data-game="fireworks">
+                <div class="icon">🎆</div>
+                <div class="label">Make Fireworks</div>
+            </button>
+        </div>
+        <div class="theme-selector">
+            <button class="theme-btn active" data-theme="default">🌈 Default</button>
+            <button class="theme-btn" data-theme="boy">🚀 Boy Theme</button>
+            <button class="theme-btn" data-theme="girl">🦄 Girl Theme</button>
+        </div>
+    </div>
+
+    <!-- Bubble Popper Game -->
+    <div id="bubble-game" class="screen">
+        <button class="back-btn">⬅️ Back</button>
+        <h2 class="game-title">🫧 Pop the Bubbles!</h2>
+        <canvas id="bubble-canvas" class="game-canvas"></canvas>
+        <div class="score">Bubbles Popped: <span id="bubble-score">0</span></div>
+    </div>
+
+    <!-- Feeding Time Game -->
+    <div id="feeding-game" class="screen">
+        <button class="back-btn">⬅️ Back</button>
+        <h2 class="game-title">🐰 Feed the Hungry Animals!</h2>
+        <canvas id="feeding-canvas" class="game-canvas"></canvas>
+        <div class="score">Animals Fed: <span id="feeding-score">0</span></div>
+        <div class="instructions">Drag food to the animals!</div>
+    </div>
+
+    <!-- Firework Creator Game -->
+    <div id="fireworks-game" class="screen">
+        <button class="back-btn">⬅️ Back</button>
+        <h2 class="game-title">🎆 Click to Make Fireworks!</h2>
+        <canvas id="fireworks-canvas" class="game-canvas"></canvas>
+        <div class="score">Fireworks Created: <span id="fireworks-score">0</span></div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
