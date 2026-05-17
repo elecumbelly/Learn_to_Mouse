@@ -7,7 +7,7 @@
 
 Three educational games that teach toddlers (ages 2–4) how to use a computer mouse through progressive skill building. Vanilla JS, canvas-rendered, installable as a PWA, works offline.
 
-**🎯 Try it live:** [Demo](https://elecumbelly.github.io/Learn_to_Mouse/) · [Repository](https://github.com/elecumbelly/Learn_to_Mouse)
+**📦 Repository:** [github.com/elecumbelly/Learn_to_Mouse](https://github.com/elecumbelly/Learn_to_Mouse) · run locally with `npm run dev`
 
 ---
 
