@@ -26,3 +26,12 @@ npm-debug.log*
 node_modules/
 dist/
 build/
+dev-dist/
+
+# Test output
+coverage/
+playwright-report/
+test-results/
+
+# Vite cache
+.vite/

@@ -1,61 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#764ba2" />
+    <meta
+      name="description"
+      content="Three educational games that teach toddlers (ages 2-4) how to use a computer mouse: bubble popping, drag-and-drop feeding, and click-to-create fireworks."
+    />
+    <meta property="og:title" content="Learn to Mouse!" />
+    <meta
+      property="og:description"
+      content="Three educational games that teach toddlers how to use a computer mouse."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>Learn to Mouse!</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Main Menu Screen -->
-    <div id="main-menu" class="screen active">
-        <h1 class="title">🖱️ Learn to Mouse! 🎮</h1>
-        <div class="game-buttons">
-            <button class="game-btn" data-game="bubble">
-                <div class="icon">🫧</div>
-                <div class="label">Pop Bubbles</div>
-            </button>
-            <button class="game-btn" data-game="feeding">
-                <div class="icon">🐰</div>
-                <div class="label">Feed Animals</div>
-            </button>
-            <button class="game-btn" data-game="fireworks">
-                <div class="icon">🎆</div>
-                <div class="label">Make Fireworks</div>
-            </button>
-        </div>
-        <div class="theme-selector">
-            <button class="theme-btn active" data-theme="default">🌈 Default</button>
-            <button class="theme-btn" data-theme="boy">🚀 Boy Theme</button>
-            <button class="theme-btn" data-theme="girl">🦄 Girl Theme</button>
-        </div>
-    </div>
+  </head>
+  <body>
+    <button
+      id="mute-btn"
+      class="mute-btn"
+      type="button"
+      aria-label="Mute audio"
+      aria-pressed="false"
+    >
+      🔊
+    </button>
 
-    <!-- Bubble Popper Game -->
-    <div id="bubble-game" class="screen">
-        <button class="back-btn">⬅️ Back</button>
-        <h2 class="game-title">🫧 Pop the Bubbles!</h2>
-        <canvas id="bubble-canvas" class="game-canvas"></canvas>
-        <div class="score">Bubbles Popped: <span id="bubble-score">0</span></div>
-    </div>
+    <main id="main-menu" class="screen active" aria-label="Main menu">
+      <h1 class="title">🖱️ Learn to Mouse! 🎮</h1>
+      <div class="game-buttons" role="group" aria-label="Choose a game">
+        <button class="game-btn" data-game="bubble" type="button">
+          <span class="icon" aria-hidden="true">🫧</span>
+          <span class="label">Pop Bubbles</span>
+        </button>
+        <button class="game-btn" data-game="feeding" type="button">
+          <span class="icon" aria-hidden="true">🐰</span>
+          <span class="label">Feed Animals</span>
+        </button>
+        <button class="game-btn" data-game="fireworks" type="button">
+          <span class="icon" aria-hidden="true">🎆</span>
+          <span class="label">Make Fireworks</span>
+        </button>
+      </div>
+      <div class="theme-selector" role="group" aria-label="Theme">
+        <button class="theme-btn active" data-theme="default" type="button" aria-pressed="true">
+          🌈 Default
+        </button>
+        <button class="theme-btn" data-theme="boy" type="button" aria-pressed="false">
+          🚀 Space
+        </button>
+        <button class="theme-btn" data-theme="girl" type="button" aria-pressed="false">
+          🦄 Candy
+        </button>
+      </div>
+      <p class="hint">Press <kbd>M</kbd> to mute · <kbd>Esc</kbd> to return to menu</p>
+    </main>
 
-    <!-- Feeding Time Game -->
-    <div id="feeding-game" class="screen">
-        <button class="back-btn">⬅️ Back</button>
-        <h2 class="game-title">🐰 Feed the Hungry Animals!</h2>
-        <canvas id="feeding-canvas" class="game-canvas"></canvas>
-        <div class="score">Animals Fed: <span id="feeding-score">0</span></div>
-        <div class="instructions">Drag food to the animals!</div>
-    </div>
+    <section id="bubble-game" class="screen" aria-label="Pop the Bubbles">
+      <button class="back-btn" type="button">⬅️ Back</button>
+      <h2 class="game-title">🫧 Pop the Bubbles!</h2>
+      <canvas id="bubble-canvas" class="game-canvas" aria-label="Bubble game playing field"></canvas>
+      <div class="score-row">
+        <div class="score">Popped: <span id="bubble-score">0</span></div>
+        <div class="best">Best: <span id="bubble-best">0</span></div>
+      </div>
+    </section>
 
-    <!-- Firework Creator Game -->
-    <div id="fireworks-game" class="screen">
-        <button class="back-btn">⬅️ Back</button>
-        <h2 class="game-title">🎆 Click to Make Fireworks!</h2>
-        <canvas id="fireworks-canvas" class="game-canvas"></canvas>
-        <div class="score">Fireworks Created: <span id="fireworks-score">0</span></div>
-    </div>
+    <section id="feeding-game" class="screen" aria-label="Feed the Animals">
+      <button class="back-btn" type="button">⬅️ Back</button>
+      <h2 class="game-title">🐰 Feed the Hungry Animals!</h2>
+      <canvas
+        id="feeding-canvas"
+        class="game-canvas"
+        aria-label="Feeding game playing field"
+      ></canvas>
+      <div class="score-row">
+        <div class="score">Fed: <span id="feeding-score">0</span></div>
+        <div class="best">Best: <span id="feeding-best">0</span></div>
+      </div>
+      <div class="instructions">Drag food to the animals!</div>
+    </section>
 
-    <script src="game.js"></script>
-</body>
+    <section id="fireworks-game" class="screen" aria-label="Make Fireworks">
+      <button class="back-btn" type="button">⬅️ Back</button>
+      <h2 class="game-title">🎆 Click to Make Fireworks!</h2>
+      <canvas
+        id="fireworks-canvas"
+        class="game-canvas"
+        aria-label="Fireworks game playing field"
+      ></canvas>
+      <div class="score-row">
+        <div class="score">Created: <span id="fireworks-score">0</span></div>
+        <div class="best">Best: <span id="fireworks-best">0</span></div>
+      </div>
+    </section>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

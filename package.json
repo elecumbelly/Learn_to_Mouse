@@ -1,0 +1,28 @@
+{
+  "name": "learn-to-mouse",
+  "version": "2.0.0",
+  "description": "Three educational games that teach toddlers (ages 2-4) how to use a computer mouse.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.60.0",
+    "@vitest/coverage-v8": "4.1.6",
+    "eslint": "9.36.0",
+    "globals": "17.6.0",
+    "jsdom": "29.1.1",
+    "prettier": "3.8.3",
+    "vite": "8.0.12",
+    "vite-plugin-pwa": "1.3.0",
+    "vitest": "4.1.6"
+  }
+}
