@@ -4,6 +4,10 @@
   "description": "Three educational games that teach toddlers (ages 2-4) how to use a computer mouse.",
   "type": "module",
   "private": true,
+  "packageManager": "pnpm@10.33.4",
+  "engines": {
+    "pnpm": ">=10"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
